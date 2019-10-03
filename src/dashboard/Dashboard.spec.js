@@ -7,3 +7,4 @@ import '@testing-library/jest-dom/extend-expect'
 test('Dashboard renders correctly', () => {
     render (<Dashboard />)
   })
+  

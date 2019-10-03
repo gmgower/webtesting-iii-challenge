@@ -10,6 +10,24 @@ test('displays if gate is open/closed and if it is locked/unlocked', () => {
   render(<Display />)
 })
 
+test('The app defaults to unlocked and open', () => {
+  const {getByText} = render (<Display />)
+  getByText(/unlocked/i);
+  getByText(/open/i);
+})
+
+test('Open and unlocked', () => {
+  const {getByText} = render(<Display locked={false} closed={false} />)
+  getByText(/unlocked/i);
+  getByText(/open/i);
+})
+
+test('Closed & locked', () => {
+  const {getByText} = render(<Display locked={true} closed={true} />)
+  getByText(/locked/i);
+  getByText(/closed/i)
+})
+
 // import App from './App';
 
 // describe('<App />', () => {
